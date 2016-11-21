@@ -1,0 +1,2 @@
+# MemoryLoci
+Memory Palace Environment
