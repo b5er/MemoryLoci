@@ -15,9 +15,6 @@ public class joyStand : MonoBehaviour {
 
         jStand = GameObject.FindGameObjectWithTag("joyStand");
         jStand.SetActive(false);
-        myText.color = Color.clear;
-        //Screen.showCursor = false;
-        //Screen.lockCursor = true;
     }
 
     // Update is called once per frame

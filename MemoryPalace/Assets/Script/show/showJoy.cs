@@ -3,7 +3,9 @@ using UnityEngine.UI;
 using System.Collections;
 
 public class showJoy : MonoBehaviour {
+    Animator joyW = null;
     public GameObject joy;
+    public GameObject user;
     public Text myText;
     public float fadeTime;
     public bool display;
@@ -14,10 +16,8 @@ public class showJoy : MonoBehaviour {
     {
 
         joy = GameObject.FindGameObjectWithTag("joy");
+        joyW = joy.GetComponent<Animator>();
         joy.SetActive(false);
-        myText.color = Color.clear;
-        //Screen.showCursor = false;
-        //Screen.lockCursor = true;
     }
 
     // Update is called once per frame
@@ -26,14 +26,11 @@ public class showJoy : MonoBehaviour {
 
         FadeText();
 
-        /*if (Input.GetKeyDown (KeyCode.Escape)) 
-         
-                {
-                        Screen.lockCursor = false;
-                         
-                }
-                */
-
+        var distance = Vector3.Distance(transform.position, user.transform.position);
+        if (distance < 2.3)
+            joyW.SetBool("closeDistance", true);
+        else
+            joyW.SetBool("closeDistance", false);
 
     }
 

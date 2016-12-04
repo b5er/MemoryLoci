@@ -15,9 +15,6 @@ public class showTable : MonoBehaviour {
 
         table = GameObject.FindGameObjectWithTag("table");
         table.SetActive(false);
-        myText.color = Color.clear;
-        //Screen.showCursor = false;
-        //Screen.lockCursor = true;
     }
 
     // Update is called once per frame
@@ -25,14 +22,7 @@ public class showTable : MonoBehaviour {
     {
 
         FadeText();
-
-        /*if (Input.GetKeyDown (KeyCode.Escape)) 
-         
-                {
-                        Screen.lockCursor = false;
-                         
-                }
-                */
+                
 
 
     }

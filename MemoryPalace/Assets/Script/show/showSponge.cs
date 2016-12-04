@@ -4,6 +4,8 @@ using System.Collections;
 
 public class showSponge : MonoBehaviour {
     public GameObject sponge;
+    public GameObject user;
+    Animator spongAni = null;
     public Text myText;
     public float fadeTime;
     public bool display;
@@ -14,10 +16,8 @@ public class showSponge : MonoBehaviour {
     {
 
         sponge = GameObject.FindGameObjectWithTag("sponge");
+        spongAni = sponge.GetComponent<Animator>();
         sponge.SetActive(false);
-        myText.color = Color.clear;
-        //Screen.showCursor = false;
-        //Screen.lockCursor = true;
     }
 
     // Update is called once per frame
@@ -26,13 +26,12 @@ public class showSponge : MonoBehaviour {
 
         FadeText();
 
-        /*if (Input.GetKeyDown (KeyCode.Escape)) 
-         
-                {
-                        Screen.lockCursor = false;
-                         
-                }
-                */
+        var distance = Vector3.Distance(transform.position, user.transform.position);
+        if (distance < 2.3)
+            spongAni.SetBool("laughing", true);
+        else
+            spongAni.SetBool("laughing", false);
+
 
 
     }

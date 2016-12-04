@@ -15,9 +15,6 @@ public class showBeer : MonoBehaviour {
 
         beer = GameObject.FindGameObjectWithTag("beer");
         beer.SetActive(false);
-        myText.color = Color.clear;
-        //Screen.showCursor = false;
-        //Screen.lockCursor = true;
     }
 
     // Update is called once per frame

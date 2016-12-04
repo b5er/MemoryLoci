@@ -17,9 +17,6 @@ public class showEd : MonoBehaviour {
 
         figure = GameObject.FindGameObjectWithTag("Ed");
         figure.SetActive(false);
-        myText.color = Color.clear;
-        //Screen.showCursor = false;
-        //Screen.lockCursor = true;
     }
 
     // Update is called once per frame

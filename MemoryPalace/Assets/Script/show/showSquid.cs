@@ -4,6 +4,7 @@ using System.Collections;
 
 public class showSquid : MonoBehaviour {
     public GameObject squid;
+    public GameObject sponge;
     public Text myText;
     public float fadeTime;
     public bool display;
@@ -12,12 +13,7 @@ public class showSquid : MonoBehaviour {
     // Use this for initialization
     void Start()
     {
-
-        squid = GameObject.FindGameObjectWithTag("squid");
         squid.SetActive(false);
-        myText.color = Color.clear;
-        //Screen.showCursor = false;
-        //Screen.lockCursor = true;
     }
 
     // Update is called once per frame
@@ -25,14 +21,10 @@ public class showSquid : MonoBehaviour {
     {
 
         FadeText();
-
-        /*if (Input.GetKeyDown (KeyCode.Escape)) 
-         
-                {
-                        Screen.lockCursor = false;
-                         
-                }
-                */
+        if(sponge.GetComponent<Animator>().GetBool("laughing"))
+        {
+            squid.GetComponent<Animator>().SetBool("shakingHead", true);
+        }
 
 
     }

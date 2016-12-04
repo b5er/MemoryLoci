@@ -15,9 +15,6 @@ public class showHeart : MonoBehaviour {
 
         heart = GameObject.FindGameObjectWithTag("heart");
         heart.SetActive(false);
-        myText.color = Color.clear;
-        //Screen.showCursor = false;
-        //Screen.lockCursor = true;
     }
 
     // Update is called once per frame
@@ -58,10 +55,6 @@ public class showHeart : MonoBehaviour {
     {
 
 
-        if (display)
-        {
-            heart.SetActive(true);
-        }
 
         if (Input.GetKeyDown("e"))
         {
