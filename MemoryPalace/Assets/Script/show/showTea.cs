@@ -14,6 +14,7 @@ public class showTea : MonoBehaviour {
     {
 
         tea = GameObject.FindGameObjectWithTag("tea");
+        tea.SetActive(false);
         myText.color = Color.clear;
         //Screen.showCursor = false;
         //Screen.lockCursor = true;

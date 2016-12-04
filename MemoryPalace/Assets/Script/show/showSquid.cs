@@ -14,6 +14,7 @@ public class showSquid : MonoBehaviour {
     {
 
         squid = GameObject.FindGameObjectWithTag("squid");
+        squid.SetActive(false);
         myText.color = Color.clear;
         //Screen.showCursor = false;
         //Screen.lockCursor = true;

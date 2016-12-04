@@ -14,6 +14,7 @@ public class showHeart : MonoBehaviour {
     {
 
         heart = GameObject.FindGameObjectWithTag("heart");
+        heart.SetActive(false);
         myText.color = Color.clear;
         //Screen.showCursor = false;
         //Screen.lockCursor = true;

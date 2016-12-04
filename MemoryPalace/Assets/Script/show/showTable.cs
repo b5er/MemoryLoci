@@ -14,6 +14,7 @@ public class showTable : MonoBehaviour {
     {
 
         table = GameObject.FindGameObjectWithTag("table");
+        table.SetActive(false);
         myText.color = Color.clear;
         //Screen.showCursor = false;
         //Screen.lockCursor = true;

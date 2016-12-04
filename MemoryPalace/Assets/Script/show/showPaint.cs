@@ -15,6 +15,7 @@ public class showPaint : MonoBehaviour {
     {
 
         paint = GameObject.FindGameObjectWithTag("bach");
+        paint.SetActive(false);
         myText.color = Color.clear;
         //Screen.showCursor = false;
         //Screen.lockCursor = true;

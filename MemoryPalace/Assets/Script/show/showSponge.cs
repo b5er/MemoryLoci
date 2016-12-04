@@ -14,6 +14,7 @@ public class showSponge : MonoBehaviour {
     {
 
         sponge = GameObject.FindGameObjectWithTag("sponge");
+        sponge.SetActive(false);
         myText.color = Color.clear;
         //Screen.showCursor = false;
         //Screen.lockCursor = true;

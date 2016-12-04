@@ -14,6 +14,7 @@ public class showJoy : MonoBehaviour {
     {
 
         joy = GameObject.FindGameObjectWithTag("joy");
+        joy.SetActive(false);
         myText.color = Color.clear;
         //Screen.showCursor = false;
         //Screen.lockCursor = true;
