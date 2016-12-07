@@ -22,7 +22,7 @@ public class MoveJoy : MonoBehaviour {
                 walk = true;
             }
             if (walk && transform.position.z < -6)
-                transform.Translate(Vector3.forward * Time.deltaTime / 5);
+                transform.Translate(Vector3.forward * Time.deltaTime / 2);
             else if (transform.position.z > -6)
             {
                 joyW.SetBool("closeDistance", false);

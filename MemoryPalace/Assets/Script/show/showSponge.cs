@@ -5,6 +5,7 @@ using System.Collections;
 public class showSponge : MonoBehaviour {
     public GameObject sponge;
     public GameObject user;
+    public GameObject heart;
     Animator spongAni = null;
     public Text myText;
     public float fadeTime;
@@ -17,6 +18,7 @@ public class showSponge : MonoBehaviour {
 
         sponge = GameObject.FindGameObjectWithTag("sponge");
         spongAni = sponge.GetComponent<Animator>();
+        sponge.GetComponent<AudioSource>().enabled = false;
         sponge.SetActive(false);
     }
 
@@ -24,15 +26,24 @@ public class showSponge : MonoBehaviour {
     void Update()
     {
 
-        FadeText();
+        if (heart.activeSelf)
+        {
 
-        var distance = Vector3.Distance(transform.position, user.transform.position);
-        if (distance < 2.3)
-            spongAni.SetBool("laughing", true);
-        else
-            spongAni.SetBool("laughing", false);
+            FadeText();
 
+            var distance = Vector3.Distance(transform.position, user.transform.position);
+            if (distance < 2.3)
+            {
+                spongAni.SetBool("laughing", true);
+                sponge.GetComponent<AudioSource>().enabled = true;
+            }
+            else
+            {
+                spongAni.SetBool("laughing", false);
+                sponge.GetComponent<AudioSource>().enabled = false;
+            }
 
+        }
 
     }
 
@@ -55,21 +66,19 @@ public class showSponge : MonoBehaviour {
     void FadeText()
 
     {
+            if (display)
+            {
+                sponge.SetActive(true);
+            }
+
+            if (Input.GetKeyDown("e"))
+            {
+
+                sponge.SetActive(false);
+            }
 
 
-        if (display)
-        {
-            sponge.SetActive(true);
-        }
-
-        if (Input.GetKeyDown("e"))
-        {
-
-            sponge.SetActive(false);
-        }
-
-
-
+        
 
     }
 }

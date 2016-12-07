@@ -4,6 +4,7 @@ using System.Collections;
 
 public class showTable : MonoBehaviour {
     public GameObject table;
+    public GameObject ed;
     public Text myText;
     public float fadeTime;
     public bool display;
@@ -20,9 +21,10 @@ public class showTable : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-
-        FadeText();
-                
+        if (ed.activeSelf)
+        {
+            FadeText();
+        }    
 
 
     }

@@ -21,7 +21,7 @@ ModelImporter:
     bakeSimulation: 0
     resampleCurves: 1
     optimizeGameObjects: 0
-    motionNodeName: 
+    motionNodeName: <Root Transform>
     animationImportErrors: 
     animationImportWarnings: 
     animationRetargetingWarnings: 
@@ -29,7 +29,7 @@ ModelImporter:
     animationCompression: 1
     animationRotationError: 0.5
     animationPositionError: 0.5
-    animationScaleError: 0.5
+    animationScaleError: 18.46
     animationWrapMode: 0
     extraExposedTransformPaths: []
     clipAnimations:

@@ -4,6 +4,8 @@ using System.Collections;
 
 public class showBeer : MonoBehaviour {
     public GameObject beer;
+    public GameObject ed;
+    public GameObject user;
     public Text myText;
     public float fadeTime;
     public bool display;
@@ -15,23 +17,23 @@ public class showBeer : MonoBehaviour {
 
         beer = GameObject.FindGameObjectWithTag("beer");
         beer.SetActive(false);
+        beer.GetComponent<AudioSource>().enabled = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-
-        FadeText();
-
-        /*if (Input.GetKeyDown (KeyCode.Escape)) 
-         
-                {
-                        Screen.lockCursor = false;
-                         
-                }
-                */
-
-
+        if (ed.activeSelf)
+        {
+            var distance = Vector3.Distance(transform.position, user.transform.position);
+            if (distance < 2)
+            {
+                beer.GetComponent<AudioSource>().enabled = true;
+            }
+            else
+                beer.GetComponent<AudioSource>().enabled = false;
+            FadeText();
+        }
     }
 
     void OnMouseOver()

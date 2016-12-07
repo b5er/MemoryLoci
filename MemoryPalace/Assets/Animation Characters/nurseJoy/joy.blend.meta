@@ -398,8 +398,8 @@ ModelImporter:
     - serializedVersion: 16
       name: walking
       takeName: walking
-      firstFrame: -1
-      lastFrame: 64
+      firstFrame: 9
+      lastFrame: 62
       wrapMode: 0
       orientationOffsetY: 0
       level: 0

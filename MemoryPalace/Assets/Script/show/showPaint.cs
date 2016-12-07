@@ -5,6 +5,8 @@ using System.Collections;
 public class showPaint : MonoBehaviour {
 
     public GameObject paint;
+    public GameObject door;
+    public GameObject user;
     public Text myText;
     public float fadeTime;
     public bool display;
@@ -16,22 +18,25 @@ public class showPaint : MonoBehaviour {
 
         paint = GameObject.FindGameObjectWithTag("bach");
         paint.SetActive(false);
+        paint.GetComponent<AudioSource>().enabled = false;
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (door.activeSelf) { 
 
-        FadeText();
+            var distance = Vector3.Distance(transform.position, user.transform.position);
+            if(distance < 3.5)
+            {
+                paint.GetComponent<AudioSource>().enabled = true;
+            } else
+            {
+                paint.GetComponent<AudioSource>().enabled = false;
+            }
+            FadeText();
 
-        /*if (Input.GetKeyDown (KeyCode.Escape)) 
-         
-                {
-                        Screen.lockCursor = false;
-                         
-                }
-                */
-
+        }
 
     }
 

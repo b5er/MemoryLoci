@@ -5,6 +5,7 @@ using System.Collections;
 public class showSquid : MonoBehaviour {
     public GameObject squid;
     public GameObject sponge;
+    public GameObject heart;
     public Text myText;
     public float fadeTime;
     public bool display;
@@ -19,13 +20,14 @@ public class showSquid : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-
-        FadeText();
-        if(sponge.GetComponent<Animator>().GetBool("laughing"))
+        if (heart.activeSelf)
         {
-            squid.GetComponent<Animator>().SetBool("shakingHead", true);
+            FadeText();
+            if (sponge.GetComponent<Animator>().GetBool("laughing"))
+            {
+                squid.GetComponent<Animator>().SetBool("shakingHead", true);
+            }
         }
-
 
     }
 

@@ -4,6 +4,7 @@ using System.Collections;
 
 public class showTea : MonoBehaviour {
     public GameObject tea;
+    public GameObject ed;
     public Text myText;
     public float fadeTime;
     public bool display;
@@ -21,15 +22,10 @@ public class showTea : MonoBehaviour {
     void Update()
     {
 
-        FadeText();
-
-        /*if (Input.GetKeyDown (KeyCode.Escape)) 
-         
-                {
-                        Screen.lockCursor = false;
-                         
-                }
-                */
+        if (ed.activeSelf)
+        {
+            FadeText();
+        }
 
 
     }

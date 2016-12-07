@@ -6,6 +6,7 @@ public class showEd : MonoBehaviour {
 
 
     public GameObject figure;
+    public GameObject door;
     public Text myText;
     public float fadeTime;
     public bool display;
@@ -22,18 +23,10 @@ public class showEd : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-
-        FadeText();
-
-        /*if (Input.GetKeyDown (KeyCode.Escape)) 
-         
-                {
-                        Screen.lockCursor = false;
-                         
-                }
-                */
-
-
+        if (door.activeSelf)
+        {
+            FadeText();
+        }
     }
 
     void OnMouseOver()

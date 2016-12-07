@@ -4,6 +4,7 @@ using System.Collections;
 
 public class showDoor : MonoBehaviour {
     public GameObject door;
+    public GameObject heart;
     public Text myText;
     public float fadeTime;
     public bool display;
@@ -20,18 +21,11 @@ public class showDoor : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
+        if (heart.activeSelf)
+        {
+            FadeText();
 
-        FadeText();
-
-        /*if (Input.GetKeyDown (KeyCode.Escape)) 
-         
-                {
-                        Screen.lockCursor = false;
-                         
-                }
-                */
-
-
+        }
     }
 
     void OnMouseOver()
